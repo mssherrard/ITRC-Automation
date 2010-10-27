@@ -19,6 +19,25 @@ class KioskWin(wx.Frame):
         vsizer.Add(gsizer, 1, wx.EXPAND)
         panel.SetSizer(vsizer)
         vsizer.Layout()
+        
+    def Configure(self):
+        cfile = open(CONFIG_FILE)
+        olditems = self.items
+        self.items = []
+        for line in cfile:
+            line = line.lstrip()
+            if not line or line.startswith('#'):
+                continue
+            vars = tuple(itm.strip() for itm in line.split(','))
+            items.append(vars + ((None,)*(3-len(vars))))
+        if self.items != olditems:
+            self.Layout()
+    
+    def Layout(self):
+        print "boo!"
+        for btn in self.buttons:
+            btn.Destroy()
+        
     
     def OnBtnPress(self, event):
         print "blah!"
@@ -47,8 +66,8 @@ class GradientPanel(wx.Panel):
 class KioskApp(wx.App):
     def OnInit(self):
         frame = KioskWin("My Kiosk App")
-#        frame.ShowFullScreen(True)
-        frame.Show(True)
+        frame.ShowFullScreen(True)
+#        frame.Show(True)
         self.SetTopWindow(frame)
         return True
 
