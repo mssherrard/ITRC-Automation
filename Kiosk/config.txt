@@ -1,0 +1,5 @@
+# this is my config file
+
+Big Bloop, big_bloop.mpg
+Little Bloop, little_bloop.mpg
+Miscellaneous, misc.mpg
