@@ -2,933 +2,935 @@
 <root>
 	<semester>f10</semester>
 	<encoder num="1">
-		<clas>
+		<class>
 			<name>ANTH4414_5514</name>
 			<days>2</days>
-			<hours>13</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>13:00:00</start>
+			<stop>14:00:00</stop>
+		</class>
+		<class>
 			<name>CHLD1105_1110</name>
 			<days>3</days>
-			<hours>19</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>19:00:00</start>
+			<stop>20:00:00</stop>
+		</class>
+		<class>
 			<name>CHLD2210</name>
 			<days>4</days>
-			<hours>19</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>19:00:00</start>
+			<stop>20:00:00</stop>
+		</class>
+		<class>
 			<name>CHLD2215</name>
 			<days>1</days>
-			<hours>19</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>19:00:00</start>
+			<stop>20:00:00</stop>
+		</class>
+		<class>
 			<name>CS1181</name>
 			<days>3</days>
-			<hours>9</hours>
-			<minutes>30</minutes>
-		</clas>
-		<clas>
+			<start>09:30:00</start>
+			<stop>10:30:00</stop>
+		</class>
+		<class>
 			<name>CS2282</name>
 			<days>24</days>
-			<hours>10</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>10:00:00</start>
+			<stop>11:00:00</stop>
+		</class>
+		<class>
 			<name>EDUC4401</name>
 			<days>4</days>
-			<hours>13</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>13</start>
+			<stop>13</stop>
+		</class>
+		<class>
 			<name>EE4499_5599</name>
 			<days>24</days>
-			<hours>8</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>08:00:00</start>
+			<stop>09:00:00</stop>
+		</class>
+		<class>
 			<name>ENGR2220</name>
 			<days>135</days>
-			<hours>11</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>11:00:00</start>
+			<stop>12:00:00</stop>
+		</class>
+		<class>
 			<name>HIST4418_5518</name>
 			<days>13</days>
-			<hours>15</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>15:00:00</start>
+			<stop>16:00:00</stop>
+		</class>
+		<class>
 			<name>NSEN6618</name>
 			<days>5</days>
-			<hours>15</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>15:00:00</start>
+			<stop>16:00:00</stop>
+		</class>
+		<class>
 			<name>PHYS4433_5533</name>
 			<days>13</days>
-			<hours>17</hours>
-			<minutes>30</minutes>
-		</clas>
-		<clas>
+			<start>17:30:00</start>
+			<stop>18:30:00</stop>
+		</class>
+		<class>
 			<name>POLS4442_5542</name>
 			<days>24</days>
-			<hours>11</hours>
-			<minutes>30</minutes>
-		</clas>
-		<clas>
+			<start>11:30:00</start>
+			<stop>12:30:00</stop>
+		</class>
+		<class>
 			<name>PSYC4431_5531</name>
 			<days>135</days>
-			<hours>13</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>13</start>
+			<stop>13</stop>
+		</class>
+		<class>
 			<name>SPAN4460_5560</name>
 			<days>135</days>
-			<hours>8</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>08:00:00</start>
+			<stop>09:00:00</stop>
+		</class>
+		<class>
 			<name>SPED4429_5529</name>
 			<days>2</days>
-			<hours>18</hours>
-			<minutes>00</minutes>
-		</clas>
+			<start>18:00:00</start>
+			<stop>19:00:00</stop>
+		</class>
 	</encoder>
 	<encoder num="2">
-		<clas>
+		<class>
 			<name>CSED3321</name>
 			<days>13</days>
-			<hours>10</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>10:00:00</start>
+			<stop>11:00:00</stop>
+		</class>
+		<class>
 			<name>CSED3330</name>
 			<days>13</days>
-			<hours>11</hours>
-			<minutes>30</minutes>
-		</clas>
-		<clas>
+			<start>11:30:00</start>
+			<stop>12:30:00</stop>
+		</class>
+		<class>
 			<name>CSED4400</name>
 			<days>24</days>
-			<hours>10</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>10:00:00</start>
+			<stop>11:00:00</stop>
+		</class>
+		<class>
 			<name>CSED4435</name>
 			<days>13</days>
-			<hours>14</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>14:00:00</start>
+			<stop>15:00:00</stop>
+		</class>
+		<class>
 			<name>CSED4445</name>
 			<days>13</days>
-			<hours>8</hours>
-			<minutes>45</minutes>
-		</clas>
-		<clas>
+			<start>08:00:00</start>
+			<stop>09:00:00</stop>
+			<stop>45</stop>
+		</class>
+		<class>
 			<name>CSED6624</name>
 			<days>24</days>
-			<hours>8</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>08:00:00</start>
+			<stop>09:00:00</stop>
+		</class>
+		<class>
 			<name>DENT4413</name>
 			<days>5</days>
-			<hours>10</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>10:00:00</start>
+			<stop>11:00:00</stop>
+		</class>
+		<class>
 			<name>EDUC4460_5560</name>
 			<days>4</days>
-			<hours>16</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>16:00:00</start>
+			<stop>17:00:00</stop>
+		</class>
+		<class>
 			<name>EDUC6633</name>
 			<days>1</days>
-			<hours>16</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>16:00:00</start>
+			<stop>17:00:00</stop>
+		</class>
+		<class>
 			<name>GEMT4430</name>
 			<days>3</days>
-			<hours>16</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>16:00:00</start>
+			<stop>17:00:00</stop>
+		</class>
+		<class>
 			<name>MPH6607</name>
 			<days>2</days>
-			<hours>17</hours>
-			<minutes>00</minutes>
-		</clas>
+			<start>17:00:00</start>
+			<stop>18:00:00</stop>
+		</class>
 	</encoder>
 	<encoder num="3">
-		<clas>
+		<class>
 			<name>CS4442</name>
 			<days>24</days>
-			<hours>14</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>14:00:00</start>
+			<stop>15:00:00</stop>
+		</class>
+		<class>
 			<name>CS4475</name>
 			<days>24</days>
-			<hours>9</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>09:00:00</start>
+			<stop>10:00:00</stop>
+		</class>
+		<class>
 			<name>EDLC7730</name>
 			<days>4</days>
-			<hours>19</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>19:00:00</start>
+			<stop>20:00:00</stop>
+		</class>
+		<class>
 			<name>EE2274</name>
 			<days>135</days>
-			<hours>11</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>11:00:00</start>
+			<stop>12:00:00</stop>
+		</class>
+		<class>
 			<name>EE4472_5572</name>
 			<days>135</days>
-			<hours>14</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>14:00:00</start>
+			<stop>15:00:00</stop>
+		</class>
+		<class>
 			<name>ENGL4433</name>
 			<days>2</days>
-			<hours>16</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>16:00:00</start>
+			<stop>17:00:00</stop>
+		</class>
+		<class>
 			<name>ENGR3350</name>
 			<days>135</days>
-			<hours>9</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>09:00:00</start>
+			<stop>10:00:00</stop>
+		</class>
+		<class>
 			<name>ENVE6616</name>
 			<days>3</days>
-			<hours>18</hours>
-			<minutes>30</minutes>
-		</clas>
-		<clas>
+			<start>18:30:00</start>
+			<stop>19:30:00</stop>
+		</class>
+		<class>
 			<name>FREN2201</name>
 			<days>1324</days>
-			<hours>8</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>08:00:00</start>
+			<stop>09:00:00</stop>
+		</class>
+		<class>
 			<name>GEMT3311</name>
 			<days>1</days>
-			<hours>16</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>16:00:00</start>
+			<stop>17:00:00</stop>
+		</class>
+		<class>
 			<name>GEMT3317</name>
 			<days>4</days>
-			<hours>16</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>16:00:00</start>
+			<stop>17:00:00</stop>
+		</class>
+		<class>
 			<name>ME4405_5505</name>
 			<days>135</days>
-			<hours>12</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>12:00:00</start>
+			<stop>13:00:00</stop>
+		</class>
+		<class>
 			<name>ME4416</name>
 			<days>24</days>
-			<hours>11</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>11:00:00</start>
+			<stop>12:00:00</stop>
+		</class>
+		<class>
 			<name>PE6615</name>
 			<days>1</days>
-			<hours>19</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>19:00:00</start>
+			<stop>20:00:00</stop>
+		</class>
+		<class>
 			<name>PHYS4455</name>
 			<days>3</days>
-			<hours>16</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>16:00:00</start>
+			<stop>17:00:00</stop>
+		</class>
+		<class>
 			<name>SPAN3341</name>
 			<days>135</days>
-			<hours>10</hours>
-			<minutes>00</minutes>
-		</clas>
+			<start>10:00:00</start>
+			<stop>11:00:00</stop>
+		</class>
 	</encoder>
 	<encoder num="4">
-		<clas>
+		<class>
 			<name>ANTH2237</name>
 			<days>5</days>
-			<hours>15</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>15:00:00</start>
+			<stop>16:00:00</stop>
+		</class>
+		<class>
 			<name>ART_MC2210</name>
 			<days>5</days>
-			<hours>12</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>12:00:00</start>
+			<stop>13:00:00</stop>
+		</class>
+		<class>
 			<name>CS_ENGR4496</name>
 			<days>135</days>
-			<hours>11</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>11:00:00</start>
+			<stop>12:00:00</stop>
+		</class>
+		<class>
 			<name>EDLA6614</name>
 			<days>3</days>
-			<hours>19</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>19:00:00</start>
+			<stop>20:00:00</stop>
+		</class>
+		<class>
 			<name>EDLA6630</name>
 			<days>1</days>
-			<hours>18</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>18:00:00</start>
+			<stop>19:00:00</stop>
+		</class>
+		<class>
 			<name>EDLH7730</name>
 			<days>2</days>
-			<hours>19</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>19:00:00</start>
+			<stop>20:00:00</stop>
+		</class>
+		<class>
 			<name>EE2240</name>
 			<days>24</days>
-			<hours>8</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>08:00:00</start>
+			<stop>09:00:00</stop>
+		</class>
+		<class>
 			<name>EE3345</name>
 			<days>135</days>
-			<hours>10</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>10:00:00</start>
+			<stop>11:00:00</stop>
+		</class>
+		<class>
 			<name>ENGR1120</name>
 			<days>13</days>
-			<hours>9</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>09:00:00</start>
+			<stop>10:00:00</stop>
+		</class>
+		<class>
 			<name>ENGR2210</name>
 			<days>135</days>
-			<hours>8</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>08:00:00</start>
+			<stop>09:00:00</stop>
+		</class>
+		<class>
 			<name>ENGR3360_3361</name>
 			<days>24</days>
-			<hours>14</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>14:00:00</start>
+			<stop>15:00:00</stop>
+		</class>
+		<class>
 			<name>GEOL4410_5510</name>
 			<days>4</days>
-			<hours>19</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>19:00:00</start>
+			<stop>20:00:00</stop>
+		</class>
+		<class>
 			<name>HIST2255</name>
 			<days>24</days>
-			<hours>11</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>11:00:00</start>
+			<stop>12:00:00</stop>
+		</class>
+		<class>
 			<name>HIST3307</name>
 			<days>24</days>
-			<hours>9</hours>
-			<minutes>30</minutes>
-		</clas>
-		<clas>
+			<start>09:30:00</start>
+			<stop>10:30:00</stop>
+		</class>
+		<class>
 			<name>NE4458_5558</name>
 			<days>13</days>
-			<hours>16</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>16:00:00</start>
+			<stop>17:00:00</stop>
+		</class>
+		<class>
 			<name>NSEN6608</name>
 			<days>24</days>
-			<hours>16</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>16:00:00</start>
+			<stop>17:00:00</stop>
+		</class>
+		<class>
 			<name>PHIL2230A</name>
 			<days>13</days>
-			<hours>14</hours>
-			<minutes>30</minutes>
-		</clas>
-		<clas>
+			<start>14:30:00</start>
+			<stop>15:30:00</stop>
+		</class>
+		<class>
 			<name>SOC3330</name>
 			<days>13</days>
-			<hours>13</hours>
-			<minutes>00</minutes>
-		</clas>
+			<start>13</start>
+			<stop>13</stop>
+		</class>
 	</encoder>
 	<encoder num="5">
-		<clas>
+		<class>
 			<name>BIOL_PHYS4488_5588</name>
 			<days>5</days>
-			<hours>13</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>13</start>
+			<stop>13</stop>
+		</class>
+		<class>
 			<name>CS3321</name>
 			<days>135</days>
-			<hours>8</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>08:00:00</start>
+			<stop>09:00:00</stop>
+		</class>
+		<class>
 			<name>CSED1126</name>
 			<days>2</days>
-			<hours>12</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>12:00:00</start>
+			<stop>13:00:00</stop>
+		</class>
+		<class>
 			<name>EDLA6662</name>
 			<days>13</days>
-			<hours>19</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>19:00:00</start>
+			<stop>20:00:00</stop>
+		</class>
+		<class>
 			<name>EDLA7722</name>
 			<days>1</days>
-			<hours>19</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>19:00:00</start>
+			<stop>20:00:00</stop>
+		</class>
+		<class>
 			<name>EE3325</name>
 			<days>13</days>
-			<hours>12</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>12:00:00</start>
+			<stop>13:00:00</stop>
+		</class>
+		<class>
 			<name>ENGR2223</name>
 			<days>135</days>
-			<hours>9</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>09:00:00</start>
+			<stop>10:00:00</stop>
+		</class>
+		<class>
 			<name>ENGR6651_6655</name>
 			<days>5</days>
-			<hours>12</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>12:00:00</start>
+			<stop>13:00:00</stop>
+		</class>
+		<class>
 			<name>ENVE4410_5510</name>
 			<days>24</days>
-			<hours>16</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>16:00:00</start>
+			<stop>17:00:00</stop>
+		</class>
+		<class>
 			<name>FREN3341</name>
 			<days>13</days>
-			<hours>16</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>16:00:00</start>
+			<stop>17:00:00</stop>
+		</class>
+		<class>
 			<name>MATH1130</name>
 			<days>24</days>
-			<hours>13</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>13</start>
+			<stop>13</stop>
+		</class>
+		<class>
 			<name>MATH2275</name>
 			<days>24</days>
-			<hours>19</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>19:00:00</start>
+			<stop>20:00:00</stop>
+		</class>
+		<class>
 			<name>ME3320</name>
 			<days>24</days>
-			<hours>9</hours>
-			<minutes>30</minutes>
-		</clas>
-		<clas>
+			<start>09:30:00</start>
+			<stop>10:30:00</stop>
+		</class>
+		<class>
 			<name>ME_NE4476_5576</name>
 			<days>135</days>
-			<hours>10</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>10:00:00</start>
+			<stop>11:00:00</stop>
+		</class>
+		<class>
 			<name>NE5521</name>
 			<days>24</days>
-			<hours>14</hours>
-			<minutes>30</minutes>
-		</clas>
-		<clas>
+			<start>14:30:00</start>
+			<stop>15:30:00</stop>
+		</class>
+		<class>
 			<name>PHYS4431_5531</name>
 			<days>24</days>
-			<hours>17</hours>
-			<minutes>30</minutes>
-		</clas>
-		<clas>
+			<start>17:30:00</start>
+			<stop>18:30:00</stop>
+		</class>
+		<class>
 			<name>SPAN2201</name>
 			<days>1245</days>
-			<hours>11</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>11:00:00</start>
+			<stop>12:00:00</stop>
+		</class>
+		<class>
 			<name>SPAN3301</name>
 			<days>24</days>
-			<hours>8</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>08:00:00</start>
+			<stop>09:00:00</stop>
+		</class>
+		<class>
 			<name>WS2201</name>
 			<days>13</days>
-			<hours>14</hours>
-			<minutes>00</minutes>
-		</clas>
+			<start>14:00:00</start>
+			<stop>15:00:00</stop>
+		</class>
 	</encoder>
 	<encoder num="6">
-		<clas>
+		<class>
 			<name>CS1182</name>
 			<days>3</days>
-			<hours>9</hours>
-			<minutes>30</minutes>
-		</clas>
-		<clas>
+			<start>09:30:00</start>
+			<stop>10:30:00</stop>
+		</class>
+		<class>
 			<name>CS3385</name>
 			<days>24</days>
-			<hours>8</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>08:00:00</start>
+			<stop>09:00:00</stop>
+		</class>
+		<class>
 			<name>CS4460_5560</name>
 			<days>135</days>
-			<hours>15</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>15:00:00</start>
+			<stop>16:00:00</stop>
+		</class>
+		<class>
 			<name>EE4400</name>
 			<days>5</days>
-			<hours>12</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>12:00:00</start>
+			<stop>13:00:00</stop>
+		</class>
+		<class>
 			<name>EE4429_5529</name>
 			<days>13</days>
-			<hours>12</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>12:00:00</start>
+			<stop>13:00:00</stop>
+		</class>
+		<class>
 			<name>ENGR1190_4481</name>
 			<days>13</days>
-			<hours>16</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>16:00:00</start>
+			<stop>17:00:00</stop>
+		</class>
+		<class>
 			<name>ENGR3307</name>
 			<days>135</days>
-			<hours>13</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>13</start>
+			<stop>13</stop>
+		</class>
+		<class>
 			<name>ENGR3364</name>
 			<days>24</days>
-			<hours>11</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>11:00:00</start>
+			<stop>12:00:00</stop>
+		</class>
+		<class>
 			<name>MATH4421_5521</name>
 			<days>24</days>
-			<hours>12</hours>
-			<minutes>30</minutes>
-		</clas>
-		<clas>
+			<start>12:30:00</start>
+			<stop>13:30:00</stop>
+		</class>
+		<class>
 			<name>NE4402</name>
 			<days>24</days>
-			<hours>9</hours>
-			<minutes>30</minutes>
-		</clas>
-		<clas>
+			<start>09:30:00</start>
+			<stop>10:30:00</stop>
+		</class>
+		<class>
 			<name>NE4446_5546</name>
 			<days>13</days>
-			<hours>17</hours>
-			<minutes>30</minutes>
-		</clas>
-		<clas>
+			<start>17:30:00</start>
+			<stop>18:30:00</stop>
+		</class>
+		<class>
 			<name>NE4458_5558</name>
 			<days>5</days>
-			<hours>16</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>16:00:00</start>
+			<stop>17:00:00</stop>
+		</class>
+		<class>
 			<name>NSEN6604</name>
 			<days>24</days>
-			<hours>8</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>08:00:00</start>
+			<stop>09:00:00</stop>
+		</class>
+		<class>
 			<name>NSEN6684</name>
 			<days>13</days>
-			<hours>19</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>19:00:00</start>
+			<stop>20:00:00</stop>
+		</class>
+		<class>
 			<name>NURS4412</name>
 			<days>5</days>
-			<hours>9</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>09:00:00</start>
+			<stop>10:00:00</stop>
+		</class>
+		<class>
 			<name>NURS4426</name>
 			<days>1</days>
-			<hours>8</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>08:00:00</start>
+			<stop>09:00:00</stop>
+		</class>
+		<class>
 			<name>PHIL2230B</name>
 			<days>24</days>
-			<hours>16</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>16:00:00</start>
+			<stop>17:00:00</stop>
+		</class>
+		<class>
 			<name>PHYS4411_5511</name>
 			<days>2</days>
-			<hours>19</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>19:00:00</start>
+			<stop>20:00:00</stop>
+		</class>
+		<class>
 			<name>PSYC2201</name>
 			<days>3</days>
-			<hours>8</hours>
-			<minutes>00</minutes>
-		</clas>
+			<start>08:00:00</start>
+			<stop>09:00:00</stop>
+		</class>
 	</encoder>
 	<encoder num="7">
-		<clas>
+		<class>
 			<name>GEMT3312</name>
 			<days>2</days>
-			<hours>15</hours>
-			<minutes>30</minutes>
-		</clas>
+			<start>15:30:00</start>
+			<stop>16:30:00</stop>
+		</class>
 	</encoder>
 	<encoder num="8">
-		<clas>
+		<class>
 			<name>BIOL4411_5511D</name>
 			<days>135</days>
-			<hours>11</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>11:00:00</start>
+			<stop>12:00:00</stop>
+		</class>
+		<class>
 			<name>BIOL4411_5511F</name>
 			<days>135</days>
-			<hours>9</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>09:00:00</start>
+			<stop>10:00:00</stop>
+		</class>
+		<class>
 			<name>BIOL4411_5511J</name>
 			<days>135</days>
-			<hours>8</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>08:00:00</start>
+			<stop>09:00:00</stop>
+		</class>
+		<class>
 			<name>BIOL4411_5511P</name>
 			<days>2</days>
-			<hours>10</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>10:00:00</start>
+			<stop>11:00:00</stop>
+		</class>
+		<class>
 			<name>BIOL4411_5511Q</name>
 			<days>2</days>
-			<hours>8</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>08:00:00</start>
+			<stop>09:00:00</stop>
+		</class>
+		<class>
 			<name>BIOL4411_5511V</name>
 			<days>135</days>
-			<hours>10</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>10:00:00</start>
+			<stop>11:00:00</stop>
+		</class>
+		<class>
 			<name>BIOL6670</name>
 			<days>4</days>
-			<hours>8</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>08:00:00</start>
+			<stop>09:00:00</stop>
+		</class>
+		<class>
 			<name>COUN6694</name>
 			<days>3</days>
-			<hours>17</hours>
-			<minutes>15</minutes>
-		</clas>
-		<clas>
+			<start>17:00:00</start>
+			<stop>18:00:00</stop>
+			<stop>15</stop>
+		</class>
+		<class>
 			<name>CSED4420</name>
 			<days>13</days>
-			<hours>12</hours>
-			<minutes>30</minutes>
-		</clas>
-		<clas>
+			<start>12:30:00</start>
+			<stop>13:30:00</stop>
+		</class>
+		<class>
 			<name>ESET1100</name>
 			<days>2</days>
-			<hours>12</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>12:00:00</start>
+			<stop>13:00:00</stop>
+		</class>
+		<class>
 			<name>GEOL4403_5503</name>
 			<days>2</days>
-			<hours>13</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>13</start>
+			<stop>13</stop>
+		</class>
+		<class>
 			<name>HIST_WS4405</name>
 			<days>2</days>
-			<hours>15</hours>
-			<minutes>30</minutes>
-		</clas>
-		<clas>
+			<start>15:30:00</start>
+			<stop>16:30:00</stop>
+		</class>
+		<class>
 			<name>MPH6602</name>
 			<days>4</days>
-			<hours>17</hours>
-			<minutes>30</minutes>
-		</clas>
-		<clas>
+			<start>17:30:00</start>
+			<stop>18:30:00</stop>
+		</class>
+		<class>
 			<name>MPH6605</name>
 			<days>1</days>
-			<hours>17</hours>
-			<minutes>30</minutes>
-		</clas>
+			<start>17:30:00</start>
+			<stop>18:30:00</stop>
+		</class>
 	</encoder>
 	<encoder num="9">
-		<clas>
+		<class>
 			<name>CSED6602L</name>
 			<days>5</days>
-			<hours>12</hours>
-			<minutes>30</minutes>
-		</clas>
-		<clas>
+			<start>12:30:00</start>
+			<stop>13:30:00</stop>
+		</class>
+		<class>
 			<name>CSED6603L</name>
 			<days>4</days>
-			<hours>12</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>12:00:00</start>
+			<stop>13:00:00</stop>
+		</class>
+		<class>
 			<name>CSED6620</name>
 			<days>24</days>
-			<hours>13</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>13</start>
+			<stop>13</stop>
+		</class>
+		<class>
 			<name>CSED6622</name>
 			<days>13</days>
-			<hours>13</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>13</start>
+			<stop>13</stop>
+		</class>
+		<class>
 			<name>CSED6625</name>
 			<days>13</days>
-			<hours>8</hours>
-			<minutes>30</minutes>
-		</clas>
-		<clas>
+			<start>08:30:00</start>
+			<stop>09:30:00</stop>
+		</class>
+		<class>
 			<name>CSED6629</name>
 			<days>24</days>
-			<hours>9</hours>
-			<minutes>30</minutes>
-		</clas>
-		<clas>
+			<start>09:30:00</start>
+			<stop>10:30:00</stop>
+		</class>
+		<class>
 			<name>CSED6630</name>
 			<days>13</days>
-			<hours>10</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>10:00:00</start>
+			<stop>11:00:00</stop>
+		</class>
+		<class>
 			<name>CSED6632</name>
 			<days>24</days>
-			<hours>8</hours>
-			<minutes>30</minutes>
-		</clas>
-		<clas>
+			<start>08:30:00</start>
+			<stop>09:30:00</stop>
+		</class>
+		<class>
 			<name>CSED6680</name>
 			<days>1</days>
-			<hours>16</hours>
-			<minutes>00</minutes>
-		</clas>
+			<start>16:00:00</start>
+			<stop>17:00:00</stop>
+		</class>
 	</encoder>
 	<encoder num="10">
-		<clas>
+		<class>
 			<name>ANTH1100</name>
 			<days>24</days>
-			<hours>14</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>14:00:00</start>
+			<stop>15:00:00</stop>
+		</class>
+		<class>
 			<name>BIOL3358</name>
 			<days>24</days>
-			<hours>12</hours>
-			<minutes>30</minutes>
-		</clas>
-		<clas>
+			<start>12:30:00</start>
+			<stop>13:30:00</stop>
+		</class>
+		<class>
 			<name>CFS3373</name>
 			<days>3</days>
-			<hours>9</hours>
-			<minutes>30</minutes>
-		</clas>
-		<clas>
+			<start>09:30:00</start>
+			<stop>10:30:00</stop>
+		</class>
+		<class>
 			<name>CSED7710</name>
 			<days>1</days>
-			<hours>13</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>13</start>
+			<stop>13</stop>
+		</class>
+		<class>
 			<name>NTD4488</name>
 			<days>1</days>
-			<hours>11</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>11:00:00</start>
+			<stop>12:00:00</stop>
+		</class>
+		<class>
 			<name>NURS3354</name>
 			<days>15</days>
-			<hours>9</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>09:00:00</start>
+			<stop>10:00:00</stop>
+		</class>
+		<class>
 			<name>NURS3372</name>
 			<days>5</days>
-			<hours>13</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>13</start>
+			<stop>13</stop>
+		</class>
+		<class>
 			<name>PSYC4445_5545</name>
 			<days>24</days>
-			<hours>11</hours>
-			<minutes>00</minutes>
-		</clas>
+			<start>11:00:00</start>
+			<stop>12:00:00</stop>
+		</class>
 	</encoder>
 	<encoder num="12">
-		<clas>
+		<class>
 			<name>ANTH4414_5514</name>
 			<days>2</days>
-			<hours>13</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>13</start>
+			<stop>13</stop>
+		</class>
+		<class>
 			<name>CHLD1105_1110</name>
 			<days>3</days>
-			<hours>19</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>19:00:00</start>
+			<stop>20:00:00</stop>
+		</class>
+		<class>
 			<name>CHLD2210</name>
 			<days>4</days>
-			<hours>19</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>19:00:00</start>
+			<stop>20:00:00</stop>
+		</class>
+		<class>
 			<name>CHLD2215</name>
 			<days>1</days>
-			<hours>19</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>19:00:00</start>
+			<stop>20:00:00</stop>
+		</class>
+		<class>
 			<name>CS1181</name>
 			<days>3</days>
-			<hours>9</hours>
-			<minutes>30</minutes>
-		</clas>
-		<clas>
+			<start>09:30:00</start>
+			<stop>10:30:00</stop>
+		</class>
+		<class>
 			<name>CS2282</name>
 			<days>24</days>
-			<hours>10</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>10:00:00</start>
+			<stop>11:00:00</stop>
+		</class>
+		<class>
 			<name>EDUC4401</name>
 			<days>4</days>
-			<hours>13</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>13</start>
+			<stop>13</stop>
+		</class>
+		<class>
 			<name>EE4499_5599</name>
 			<days>24</days>
-			<hours>8</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>08:00:00</start>
+			<stop>09:00:00</stop>
+		</class>
+		<class>
 			<name>ENGR2220</name>
 			<days>135</days>
-			<hours>11</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>11:00:00</start>
+			<stop>12:00:00</stop>
+		</class>
+		<class>
 			<name>HIST4418_5518</name>
 			<days>13</days>
-			<hours>15</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>15:00:00</start>
+			<stop>16:00:00</stop>
+		</class>
+		<class>
 			<name>NSEN6618</name>
 			<days>5</days>
-			<hours>15</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>15:00:00</start>
+			<stop>16:00:00</stop>
+		</class>
+		<class>
 			<name>PHYS4433_5533</name>
 			<days>13</days>
-			<hours>17</hours>
-			<minutes>30</minutes>
-		</clas>
-		<clas>
+			<start>17:30:00</start>
+			<stop>18:30:00</stop>
+		</class>
+		<class>
 			<name>POLS4442_5542</name>
 			<days>24</days>
-			<hours>11</hours>
-			<minutes>30</minutes>
-		</clas>
-		<clas>
+			<start>11:30:00</start>
+			<stop>12:30:00</stop>
+		</class>
+		<class>
 			<name>PSYC4431_5531</name>
 			<days>135</days>
-			<hours>13</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>13</start>
+			<stop>13</stop>
+		</class>
+		<class>
 			<name>SPAN4460_5560</name>
 			<days>135</days>
-			<hours>8</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>08:00:00</start>
+			<stop>09:00:00</stop>
+		</class>
+		<class>
 			<name>SPED4429_5529</name>
 			<days>2</days>
-			<hours>18</hours>
-			<minutes>00</minutes>
-		</clas>
+			<start>18:00:00</start>
+			<stop>19:00:00</stop>
+		</class>
 	</encoder>
 	<encoder num="17">
-		<clas>
+		<class>
 			<name>BIOL4432_5532</name>
 			<days>135</days>
-			<hours>10</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>10:00:00</start>
+			<stop>11:00:00</stop>
+		</class>
+		<class>
 			<name>BIOL4464_5564</name>
 			<days>1235</days>
-			<hours>8</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>08:00:00</start>
+			<stop>09:00:00</stop>
+		</class>
+		<class>
 			<name>BIOL4496</name>
 			<days>4</days>
-			<hours>16</hours>
-			<minutes>00</minutes>
-		</clas>
-		<clas>
+			<start>16:00:00</start>
+			<stop>17:00:00</stop>
+		</class>
+		<class>
 			<name>PSYC3301</name>
 			<days>24</days>
-			<hours>14</hours>
-			<minutes>30</minutes>
-		</clas>
+			<start>14:30:00</start>
+			<stop>15:30:00</stop>
+		</class>
 	</encoder>
 </root>
