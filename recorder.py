@@ -1,7 +1,8 @@
 from lxml import etree
 import datetime
 
-DayOfWeek = dict((d,n+1) for n,d in enumerate('MTWRFSU'))
+DaysOfWeek = '!MTWRFSU'
+WeekDayNum = dict((d,n) for n,d in enumerate(DaysOfWeek))
 
 class Class:
 	def __init__(self, item):
@@ -10,11 +11,11 @@ class Class:
 		if days.isdigit():
 			self.days = set(int(day) for day in days)
 		else:
-			self.days = set(DayOfWeek[day] for day in days.upper())
+			self.days = set(WeekDayNum[day] for day in days.upper())
 		self.start = datetime.datetime.strptime(item.findtext('start'), "%H:%M:%S").time()
 		self.stop = datetime.datetime.strptime(item.findtext('stop'), "%H:%M:%S").time()
 	def __repr__(self):
-		return "Class<%s %s %s-%s>" % (self.name, self.days, self.start, self.stop)
+		return "Class(%s %s %s-%s)" % (self.name, ''.join(DaysOfWeek[day] for day in self.days), self.start, self.stop)
 
 def Parse(fname, encnum):
 	# parse an XML class list into a dict of class sessions
@@ -24,8 +25,11 @@ def Parse(fname, encnum):
 		return None
 	return dict((cls.name, cls) for cls in [Class(item) for item in encoder])
 
-##def foobar(classlst, day):
-##	[
+def Filter(classes, date):
+	day = date.isoweekday()
+	classes = [cls for cls in classes.values() if day in cls.days]
+	classes.sort(key=lambda cls: cls.start)
+	return classes
 
 ##	for item in encoder:
 ##		Class(item.findtext('name'), item.findtext('days'),
