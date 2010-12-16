@@ -7,13 +7,14 @@ import os
 from xml.etree import cElementTree as etree
 
 logging.basicConfig(level=logging.DEBUG,
-                    format="%(asctime)s - %(levelname)s - %(message)s")
+                    format="%(asctime)s - %(levelname)s - %(message)s",
+                    datefmt="%H:%M:%S")
 
 # this defines how often the repository will be queried for updates
 REPO_UPDATE_INTERVAL = timedelta(hours=1)
 # this defines the length of the window that is fetched from the repo
 # for production I think a week would be good, for testing we will use 1 day
-REPO_FETCH_WINDOW = timedelta(days=1)
+REPO_FETCH_WINDOW = timedelta(hours=3)
 
 ROOT_DIR = r"C:\RecTest"
 FMLE_PATH = r"C:\Program Files\Adobe\Flash Media Live Encoder 3.1\FMLECmd.exe"
@@ -66,13 +67,18 @@ class IdleScheduler(BaseScheduler):
 		self.canidle = True
 
 	def _delayfn(self, delay):
+		print "enter _delayfn(%s)" % delay
 		delay = delay.total_seconds() if delay else 0
 		endtime = pytimelib.time() + delay
+		print "endtime = %s" % endtime
 		cont = self.canidle
 		while delay > 0 and cont:
 			cont = self.idlefn(delay)
 			delay = endtime - pytimelib.time()
-		pytimelib.sleep(delay)
+			print "delay = %s" % delay
+		if delay >= 0:
+			print "sleeping %s" % delay
+			pytimelib.sleep(delay)
 
 	def clear(self):
 		del self._queue[:]
@@ -88,7 +94,7 @@ class SessnScheduler(IdleScheduler):
 		self.enter(timedelta(0), 3, self.RefreshSched, ())
 	
 	def Idle(self, delay):
-		logging.info("Starting idle loop for %d seconds", delay)
+		logging.info("Starting idle loop for %s seconds", delay)
 		more = False
 		logging.info("Ending idle loop, returning %s", more)
 		return more
@@ -129,11 +135,13 @@ class SessnScheduler(IdleScheduler):
 		self.enter(REPO_UPDATE_INTERVAL, 3, self.RefreshSched, ())
 
 	def StartSession(self, sessn):
+		print "boo!"
 		logging.info("Starting recording session %s", sessn)
 		self.canidle = False
 		StartFMLE(sessn)
 
 	def StopSession(self, sessn):
+		print "barf!"
 		logging.info("Stopping recording session %s", sessn)
 		self.canidle = True
 		StopFMLE(sessn)
@@ -152,6 +160,7 @@ if __name__ == '__main__':
 	logging.info("Creating scheduler for room '%s'", room)
 	scheduler = SessnScheduler(repo, room)
 	scheduler.run()
+	print "doh!"
 
 ##from operator import attrgetter
 ##def Filter(classes, date):
