@@ -20,7 +20,7 @@ ROOT_DIR = r"C:\RecTest"
 FMLE_PATH = r"C:\Program Files\Adobe\Flash Media Live Encoder 3.1\FMLECmd.exe"
 
 def StartFMLE(sessn):
-	title = filter(lambda ch: ch.isalpha() or ch in ('_-'), sessn.title)
+	title = ''.join(ch if ch.isalnum() else '_' for ch in sessn.title)
 	outdir = os.path.join(ROOT_DIR, title)
 	profsrc = profdst = os.path.join(outdir, 'profile.xml')
 	if not os.access(outdir, os.F_OK):
@@ -45,7 +45,7 @@ def StartFMLE(sessn):
 	logging.info("Popen returned %d", proc.pid)
 
 def StopFMLE(sessn):
-	title = filter(lambda ch: ch.isalpha() or ch in ('_-'), sessn.title)
+	title = ''.join(ch if ch.isalnum() else '_' for ch in sessn.title)
 	outdir = os.path.join(ROOT_DIR, title)
 	fname = title + sessn.start.strftime('_%m%d.flv')
 	fpath = os.path.join(outdir, fname)
