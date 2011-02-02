@@ -1,8 +1,5 @@
 #from lxml import etree
-from xml.etree import cElementTree as etree
-from gdata.spreadsheet import service as gdss
 from datetime import datetime
-import os
 
 APP_NAME = 'ITRC/SchedLib-0.1'
 
@@ -30,6 +27,9 @@ class Session:
 ##		return "Class(%s %s %s-%s)" % (self.name, concat(DaysOfWeek[day] for day in self.days), self.start, self.stop)
 ##											 self.stop.time().strftime('%H:%M'))
 
+import os
+from xml.etree import cElementTree as etree
+
 class RepoXML:
 	def __init__(self, fname):
 		self.fname = fname
@@ -52,6 +52,8 @@ class RepoXML:
 ##			self.days = {WeekDayNum[day] for day in days.upper()}
 ##		self.start = datetime.strptime(item.findtext('start'), "%H:%M:%S").time()
 ##		self.stop = datetime.strptime(item.findtext('stop'), "%H:%M:%S").time()
+
+from gdata.spreadsheet import service as gdss
 
 class RepoTMS:
 	def __init__(self, fname, user, passwd):
@@ -115,8 +117,65 @@ class RepoTMS:
 					   getstr('billingcode') != 'norecord',
 					   getvstr('message', '\n'))
 	
+import pyodbc
+pyodbc.lowercase = True
 
-class RepoSQL:
-	# not yet implemented
-	pass
+SELECT = """
+SELECT act.actnumber, act.name, act.client, cli.email,
+       act.project, act.prime, act.tentative,
+       dat.date, dat.time, dat.enddate, dat.endtime
+"""
+
+FROM1 = "FROM activity act, dates dat, client cli, resact ra1"
+FROM2 = ", resact ra2"
+
+WHERE1 = """
+WHERE act.actnumber = dat.actnumber AND act.client = cli.client
+      AND act.actnumber = ra1.actnumber AND act.tentative <> 4
+      AND act.inactive = 0 AND dat.date BETWEEN ? AND ? AND ra1.resource = '{}'
+""".format(RECORDER_RESOURCE)
+
+WHERE2 = "AND act.actnumber = ra2.actnumber AND ra2.resource = ?"
+
+ORDER = "ORDER BY dat.date, dat.time"
+
+FETCH1 = SELECT + FROM1 + WHERE1 + ORDER
+FETCH2 = SELECT + FROM1 + FROM2 + WHERE1 + WHERE2 + ORDER
+
+SELECT2 = """
+select da.actnumber from dates da, resact ra
+ where da.actnumber = ra.actnumber and
+       da.date >= ? and da.date <= ? and ra.resource = {}
+""".format(RECORDER_NAME)
+
+foo = "select notes from actnotes where actnumber = ?"
+FETCH3 = "SELECT filename FROM docs WHERE number = ? AND description = 'Moodle'"
+
+class RepoTPS:
+	def __init__(self, dsn, user, passwd):
+		self.cxn = pyodbc.connect(dsn=dsn, autocommit=True)
+	def Updated(self):
+		pass
+	def Fetch(self, begindate, enddate, room=None):
+		curs1 = self.cxn.cursor()
+		curs2 = self.cxn.cursor()
+		if room:
+			curs1.execute(FETCH2, begindate, enddate, room)
+		else:
+			curs1.execute(FETCH1, begindate, enddate)
+		return [self.Parse(row, curs2.execute(FETCH3, row.actnumber)) for row in curs1]
+	
+	@staticmethod
+	def Parse(row, room???):
+		return Session(srcid = row.actnumber,
+					   title = row.name,
+					   categ = row.project,
+					   owner = row.client,
+					   email = row.email,
+					   room  = room,
+					   start = datetime.combine(row.date, row.time),
+					   stop  = datetime.combine(row.enddate, row.endtime),
+					   primary = row.prime == room,
+					   onetime = row.tentative == 5)
+					   
 
