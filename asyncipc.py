@@ -1,49 +1,67 @@
-import socket
-from collections import OrderedDict
+import io
+import sockio
 
-class HTTPTransport(object):
+class Client(object):
     def __init__(self):
         pass
-    def request(self, action, path, data=None, type=None):
-        method = {'g': 'GET',
-                  's': 'PUT',
-                  'd': 'DELETE',
-                  'c': 'POST'}[action]
-        path = concat(path, '/')
-        buffer = ['{} {} HTTP/1.1'.format(method, path)]
-        header = OrderedDict()
-        if data is not None:
-            header[_CONTENT_TYPE] = type
-            header[_CONTENT_LENGTH] = len(data)
-        for key, val in header.items():
-            buf.append('{}: {}'.format(key, val))
-        buffer.append('')
-        if data is not None:
-            buffer.append(data)
-        concat(buffer, CRLF)
-        # sendall might call send multiple times
-        self.sock.sendall(buffer)
-        del buffer
-        #
-        line = self.sock.recvline()
-        ver, status, msg = line.split(None, 2)
+    def foo():
         while True:
-            line = self.sock.recvline()
-            if line.isspace():
-                break
-            if not line[0].isspace():
-                key, val = line.split(':', 1)
-                key = key.title()
-                val = val.strip()
-                if key not in header:
-                    header[key] = val
-                else:
-                    header[key] += ', ' + val
-            else:
-                header[key] += line
-        len = header.get(_CONTENT_LENGTH, 0)
-        data = self.sock.recvall(len)
+            request = self.queue.get()
+            response = self.transport.transact(request)
+            self.handle_response(response)
 
-class BufferSocket(socket.SocketType):
-    def recvline(self):
-        cnt = self.recv_into(ptr)
+class Server:
+    def foo(self, port, bufsize):
+        addr = ':{}'.format(port)
+        self.srvsock = socketio.open(addr, 'rwb@', bufsize, backlog=5)
+        for clisock in self.srvsock:
+            thrd = threading.Thread(target=foo, args=clisock)
+            thrd.start()
+    def blah(self, sock):
+        
+class Transport(object):
+    def __init__(self, marshal):
+        pass
+    def send_req(self, method, path, data=None):
+        # send one request to peer and return the reply
+        buf = ['{} {} HTTP/1.1'.format(method, path)]
+        if self.auth:
+            add_header(buf, _AUTHORIZATION, self.auth)
+        if data is not None:
+            data = self.marshal.dump(data)
+            add_header(buf, _CONTENT_TYPE, self.marshal.mimetype)
+            add_header(buf, _CONTENT_LENGTH, len(data))
+        buf.append('')
+        if data is not None:
+            buf.append(data)
+        buf = concat(buf, CRNL)
+        self.sock.sendall(buf)
+        buf = self.sock.recv()
+
+
+class Proxy(object):
+    def __init__(self, addr, serial=None, ifdesc=None, family=socket.AF_INET):
+        self.addr = addr
+#        self.sock = socket.socket(family, socket.SOCK_STREAM)
+#        self.sock.bind(addr)
+    def __getattr__(self, attr):
+        return Accessor(self, '', attr)
+    def _get(self, attr):
+        pass
+    def _set(self, attr, val):
+        pass
+    def _del(self, attr):
+        pass
+    def _call(self, path, args, kwargs):
+        data = self.marshal.dump((args, kwargs))
+        return self.trans.request('POST', path, data)
+    
+class Accessor(object):
+    def __init__(self, proxy, path1, path2):
+        self.proxy = proxy
+        self.path = path1 + '/' + path2
+    def __getattr__(self, attr):
+        return Accessor(self.proxy, self.path, attr)
+    def __call__(self, *args, **kwargs):
+        return self.proxy.call(self.path, args, kwargs)
+
