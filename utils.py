@@ -1,24 +1,24 @@
 
-class BiDict(dict):
-    def __init__(self, *args, **kwargs):
-        dict.__init__(self)
-        if args:
-            args = args[0]
-            if isinstance(args, dict):
-                items = args.iteritems()
-            else:
-                items = iter(args)
-            for key, val in items:
-                self[key] = val
-        if kwargs:
-            for key, val in kwargs.iteritems():
-                self[key] = val
-    def __setitem__(self, key, val):
-        dict.__setitem__(self, key, val)
-        dict.__setitem__(self, val, key)
-    def __delitem__(self, key):
-        dict.__delitem__(self, self[key])
-        dict.__delitem__(self, key)
+#class BiDict(dict):
+#    def __init__(self, *args, **kwargs):
+#        dict.__init__(self)
+#        if args:
+#            args = args[0]
+#            if isinstance(args, dict):
+#                items = args.iteritems()
+#            else:
+#                items = iter(args)
+#            for key, val in items:
+#                self[key] = val
+#        if kwargs:
+#            for key, val in kwargs.iteritems():
+#                self[key] = val
+#    def __setitem__(self, key, val):
+#        dict.__setitem__(self, key, val)
+#        dict.__setitem__(self, val, key)
+#    def __delitem__(self, key):
+#        dict.__delitem__(self, self[key])
+#        dict.__delitem__(self, key)
 
 def concat(seq, sep=''):
     return sep.join(seq)
@@ -68,12 +68,5 @@ def delegate(objtype, objname, attrnames):
                 attr = makeattr(name)
             setattr(cls, name, attr)
         return cls
-##        for name, value in objtype.__dict__.items():
-##            if not name.startswith('__') and name not in cls.__dict__:
-##                if callable(value):
-##                    setattr(cls, name, makemethod(name, value))
-##                else:
-##                    setattr(cls, name, makemember(name, value))
-##        return cls
-    
+
     return makedelegate

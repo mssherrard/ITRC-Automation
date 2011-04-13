@@ -11,8 +11,12 @@ from utils import delegate, concat
 SocketError = error
 TimeoutError = timeout
 
-_BLOCKING_ERRNOS = {getattr(errno, name) for name in ('EAGAIN', 'EWOULDBLOCK')
-                                            if hasattr(errno, name)}
+_BLOCKING_ERRNOS = tuple(getattr(errno, name) 
+                         for name in ('EAGAIN', 'EWOULDBLOCK')
+                         if hasattr(errno, name))
+_CLOSED_ERRNOS = tuple(getattr(errno, name) 
+                       for name in ('EBADF', 'ENOTSOCK')
+                       if hasattr(errno, name))
 _ADDRFAMILY_MAP = {key[3:].lower(): val for key, val in globals().iteritems() 
                                             if key.startswith('AF_')}
 _ADDRFAMILY_MAP.update({val: key for key, val in _ADDRFAMILY_MAP.iteritems()})
@@ -60,15 +64,17 @@ def _make_sockaddr(family, addr):
             if ':' in val:
                 val = '[' + val + ']'
             acc.append(val)
-        addr = ':'.join(acc)
+        addr = concat(acc, ':')
     return ':{}:{}'.format(family, addr)
 
-def _parse_mode(mode, *options):
+def _parse_mode(mode):
+    options = ['r', 'w', 'tb', (False, True),
+               'sdmp', (SOCK_STREAM, SOCK_DGRAM, SOCK_RDM, SOCK_SEQPACKET), 
+               '@']
     modeset = set(mode)
     if len(modeset) != len(mode):
         raise ValueError("invalid mode: %r" % mode)
     retvals = ['']
-    options = list(options)
     while options:
         optstr = options.pop(0)
         if len(optstr) > 1:
@@ -91,10 +97,7 @@ def open(sockaddr, mode='rw', buffering=-1,
          encoding=None, errors=None, newline=None,
          closefd=True, timeout=None, backlog=None):
 
-    mode, reading, writing, binary, socktype, passive = \
-          _parse_mode(mode, 'r', 'w', 'tb', (False, True),
-                            'sdmp', (SOCK_STREAM, SOCK_DGRAM, 
-                                     SOCK_RDM, SOCK_SEQPACKET), '@')
+    mode, reading, writing, binary, socktype, passive = _parse_mode(mode)
     if not reading and not writing:
         raise ValueError("mode must specify at least one of reading/writing")
     if not binary and not buffering:
@@ -123,7 +126,7 @@ def open(sockaddr, mode='rw', buffering=-1,
     else:
         raise TypeError("invalid sockaddr: %r" % sockaddr)
     
-    openargs = (buffering, encoding, errors, newline) if passive else None
+    openargs = (buffering, encoding, errors, newline) if passive else ()
     ios = SocketIO(sock, mode, openargs)
     if passive:
         return ios
@@ -161,7 +164,21 @@ class SocketIO(io.RawIOBase):
     This class provides the raw I/O interface on top of a socket object.
     """
 
-    def __init__(self, sock, mode='rwb', openargs=None):
+    class socketiterator(object):
+        __slots__ = 'sock'
+        def __init__(self, sock):
+            self.sock = sock
+        def __iter__(self):
+            return self
+        def next(self):
+            try:
+                return self.sock.accept()
+            except SocketError as err:
+                if err.args[0] in _CLOSED_ERRNOS:
+                    raise StopIteration
+                raise
+
+    def __init__(self, sock, mode='rwb', openargs=()):
         io.RawIOBase.__init__(self)
         self._sock = sock
         self._mode = mode
@@ -174,7 +191,13 @@ class SocketIO(io.RawIOBase):
             desc = 'name=%r mode=%r' % (self.name, self.mode)
         return '<%s.%s %s>' % (self.__class__.__module__,
                                self.__class__.__name__, desc)
-    
+
+    def __iter__(self):
+        if '@' in self._mode:
+            return self.socketiterator(self)
+        else:
+            return self
+
     @property
     def name(self):
         try:
@@ -236,7 +259,8 @@ class SocketIO(io.RawIOBase):
         representing the connection.
         """
         sock, addr = self._sock.accept()
-        return open(sock, self._mode.replace('@', ''), *self._openargs, timeout=self.timeout)
+        return open(sock, self._mode.replace('@', ''), 
+                    *self._openargs, timeout=self.timeout)
 
     def readinto(self, b):
         """Read up to len(b) bytes into the writable buffer *b* and return
@@ -275,12 +299,12 @@ class SocketIO(io.RawIOBase):
 @delegate(io.BufferedReader, '_reader', ('read', 'read1', 'readinto', 'peek',
                                          'readline', 'next', 'readable'))
 class BufferedSequential(io.BufferedIOBase):
-    
+
     def __init__(self, raw, buffer_size=io.DEFAULT_BUFFER_SIZE):
         io.BufferedIOBase.__init__(self)
         self._reader = io.BufferedReader(raw, buffer_size)
         self._writer = io.BufferedWriter(raw, buffer_size)
-        
+
     def __repr__(self):
         if self.raw:
             desc = 'name=%r' % self.name
@@ -288,42 +312,11 @@ class BufferedSequential(io.BufferedIOBase):
             desc = '[detached]'
         return '<%s.%s %s>' % (self.__class__.__module__,
                                self.__class__.__name__, desc)
-        
+
     def close(self):
         self._writer.close()
         return self._reader.close()
-        
+
     def detach(self):
         self._writer.detach()
         return self._reader.detach()
-        
-
-import string
-from datetime import datetime
-
-def echotest(port):
-    printable = frozenset(string.digits + string.letters + string.punctuation + ' ')
-    sock = socket(AF_INET, SOCK_STREAM)
-    sock.bind(('', port))
-    sock.listen(1)
-    print "{}: listening on port {}".format(datetime.now().isoformat(), port)
-    try:
-        while True:
-            clisock, addr = sock.accept()
-            print "{}: conn from {}".format(datetime.now().isoformat(), addr)
-            while True:
-                data = clisock.recv(1024)
-                if not data:
-                    break
-                print "{}: recvd {} bytes".format(datetime.now().isoformat(), len(data))
-                for idx in range(0, len(data), 16):
-                    d1 = ' '.join('{:02X}'.format(ord(ch)) for ch in data[idx:idx+16])
-                    d2 = ''.join(ch if ch in printable else '.' for ch in data[idx:idx+16])
-                    print '{:04x} - {:47} - {:16}'.format(idx, d1, d2)
-                clisock.send(data)
-            print "{}: conn closed".format(datetime.now().isoformat())
-            clisock.close()
-    finally:
-        print "bye!"
-        sock.close()
-    
