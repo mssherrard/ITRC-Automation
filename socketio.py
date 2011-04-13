@@ -192,12 +192,6 @@ class SocketIO(io.RawIOBase):
         return '<%s.%s %s>' % (self.__class__.__module__,
                                self.__class__.__name__, desc)
 
-    def __iter__(self):
-        if '@' in self._mode:
-            return self.socketiterator(self)
-        else:
-            return self
-
     @property
     def name(self):
         try:
@@ -251,6 +245,13 @@ class SocketIO(io.RawIOBase):
             self._mode = self._mode.replace('r', '')
         if how in (SHUT_WR, SHUT_RDWR):
             self._mode = self._mode.replace('w', '')
+
+    def connections(self):
+        """connections() -> iterator
+
+        For passive sockets, iterates over incoming connections.
+        """
+        return self.socketiterator(self)
 
     def accept(self):
         """accept() -> SocketIO object
